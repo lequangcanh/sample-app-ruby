@@ -11,7 +11,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
         password_confirmation: "123" } }
     end
     assert_template "users/new"
-    assert_select "form[action=?]", signup_path
+    assert_select "form[action=?]", signup_path, count: 0
   end
 
   test "valid signup information" do
